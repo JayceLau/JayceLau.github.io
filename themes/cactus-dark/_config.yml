@@ -34,12 +34,14 @@ customize:
     highlight: rainbow
 
 # RSS
-rss: false
+rss: 
 
 # Plugins
 plugins:
-    disqus_shortname: # Disqus Comments Shortname
-    google_analytics: UA-86660611-1 # enter the tracking ID for your Google Analytics
+    disqus_shortname: JR4ever 
+# Disqus Comments Shortname
+    google_analytics: UA-100497343-1 
+# enter the tracking ID for your Google Analytics
 
 # Miscellaneous
 miscellaneous:
