@@ -1,0 +1,23 @@
+menu:
+  Home: /
+  Archives: /archives
+
+logo: JR4ever
+
+more:
+  Jack: https://shijieqin.github.io
+  Github: https://github.com/JayceLau
+##  微博: http://weibo.com/XXX
+##  知乎: https://www.zhihu.com/people/XXX
+##  rss: /rss2.xml
+  About: /about
+
+about:
+  title:
+  link: 
+
+disqus_shortname: JR4ever
+
+excerpt_num: 120
+
+footer_info: © JR 2010-4ever

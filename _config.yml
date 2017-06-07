@@ -4,10 +4,10 @@
 
 # Site
 title: JR4ever
-subtitle: Jayce & Rosa 4ever!
+subtitle: JR4ever
 description:
 author: Jayce
-language: zh
+language: en
 timezone: Asia/Shanghai
 
 # URL
@@ -64,7 +64,8 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 #theme: landscape
-theme: cactus-dark
+#theme: cactus-dark
+theme: pln
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -73,3 +74,12 @@ deploy:
   repo: git@github.com:JayceLau/JayceLau.github.io.git
 ##  repo: https://github.com/JayceLau/JayceLau.github.io.git
 
+# title, chinese available
+links_title: Links
+# links
+links:
+  Jack: https://shijieqin.github.io
+
+sarch:
+  path: search.xml
+  field: post
