@@ -1,0 +1,10 @@
+options:
+  askImageFilename: false
+  spellcheck: true
+  lineNumbers: true
+  imagePath: _posts/Oracle-RAC-12cR2安装手册-1-虚拟机的准备
+  imagePrefix: node01-configure-
+editor:
+  inputStyle: contenteditable
+  spellcheck: true
+  lineNumbers: true
