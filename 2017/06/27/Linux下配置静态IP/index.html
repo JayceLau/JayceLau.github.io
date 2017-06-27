@@ -7,12 +7,12 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="google-site-verification" content="" />
   
-  <title>Oracle RAC 12c R2 Database on Linux Using VirtualBox</title>
+  <title>Linux下配置静态IP</title>
   <meta name="author" content="Jayce">
-   <meta name="description" content="Comming soon…">
+   <meta name="description" content="使用ifconfig命令查看当前使用的网卡👇🏻当前使用的网卡为eth0👆🏻使用如下命令查看当前网卡的MAC地址👇🏻cat /etc/udev/rules.d/70-persistent-net.ruleseth0网卡的MAC地址为08:00:27:44:9e:74👆🏻使用如下命令查看">
   
 
-  <meta property="og:title" content="Oracle RAC 12c R2 Database on Linux Using VirtualBox"/>
+  <meta property="og:title" content="Linux下配置静态IP"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:site_name" content="JR4ever"/>
  <meta property="og:image" content="undefined"/>
@@ -45,7 +45,7 @@
       
   
     <h1 class="page-title center">
-        Oracle RAC 12c R2 Database on Linux Using VirtualBox
+        Linux下配置静态IP
     </h1>
   
 
@@ -53,9 +53,9 @@
     </div>
     <div class="meta center">
       
-<time datetime="2017-06-07T15:01:34.000Z">
+<time datetime="2017-06-27T10:06:00.000Z">
   <i class="fa fa-calendar"></i>&nbsp;
-  2017-06-07
+  2017-06-27
 </time>
 
 
@@ -63,10 +63,15 @@
     
     &nbsp;
     <i class="fa fa-tag"></i>&nbsp;
-    <a href="/categories/Tech/">Tech</a>·<a href="/categories/Tech/Oracle/">Oracle</a>·<a href="/categories/Tech/Oracle/RAC/">RAC</a>
+    <a href="/categories/Linux/">Linux</a>·<a href="/categories/Linux/Network/">Network</a>
 
 
 
+
+    
+    &nbsp;
+    <i class="fa fa-tag"></i>&nbsp;
+    <a href="/tags/Tech/">Tech</a>·<a href="/tags/Configuration/">Configuration</a>
 
 
     </div>
@@ -74,7 +79,13 @@
     <div class="picture-container">
       
     </div>
-    <p>Comming soon…</p>
+    <p>使用ifconfig命令查看当前使用的网卡👇🏻<br><img src="/2017/06/27/Linux下配置静态IP/linux-config-static-ip-0.png" alt="linux-static-ip-configuration" title="linux-static-ip-configuration"><br>当前使用的网卡为eth0👆🏻<br>使用如下命令查看当前网卡的MAC地址👇🏻<br><code>cat /etc/udev/rules.d/70-persistent-net.rules</code><br><img src="/2017/06/27/Linux下配置静态IP/linux-config-static-ip-1.png" alt="linux-static-ip-configuration" title="linux-static-ip-configuration"><br>eth0网卡的MAC地址为08:00:27:44:9e:74👆🏻<br>使用如下命令查看当前网卡的UUID👇🏻<br><code>nmcli co</code><br><img src="/2017/06/27/Linux下配置静态IP/linux-config-static-ip-2.png" alt="linux-static-ip-configuration" title="linux-static-ip-configuration"><br>eth0网卡的UUID为83121414-3da9-49fb-ba1b-ed5441278cba<br>创建或者编辑eth0网卡的脚本文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd /etc/sysconfig/network-scripts/</div><div class="line">vi ifcfg-eth0</div></pre></td></tr></table></figure></p>
+<p>参考配置如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">DEVICE=eth0</div><div class="line">HWADDR=08:00:27:44:9e:74</div><div class="line">TYPE=Ethernet</div><div class="line">UUID=83121414-3da9-49fb-ba1b-ed5441278cba</div><div class="line">ONBOOT=yes</div><div class="line">NM_CONTROLLED=yes</div><div class="line">BOOTPROTO=static</div><div class="line">IPADDR=172.16.10.11</div><div class="line">GATEWAY=172.16.10.1</div><div class="line">NETMASK=255.255.255.0</div><div class="line">DNS1=8.8.8.8</div><div class="line">DNS2=114.114.114.114</div></pre></td></tr></table></figure></p>
+<p>注：</p>
+<ul>
+<li>需将HWADDR和UUID修改为对应值。</li>
+</ul>
+<p>使用如下命令重启网络<br><code>service network restart</code><br>由于IP的改变此时连接会断开，使用新的IP重新连接即可。<br><img src="/2017/06/27/Linux下配置静态IP/linux-config-static-ip-3.png" alt="linux-static-ip-configuration" title="linux-static-ip-configuration"><br>连接成功，配置完成👆🏻</p>
 
 
   </article>
@@ -92,7 +103,7 @@
 <script>
 
 var disqus_config = function () {
-this.page.url = 'https://JayceLau.github.io/2017/06/07/Oracle-RAC-12c-R2-Database-on-Linux-Using-VirtualBox/index.html';
+this.page.url = 'https://JayceLau.github.io/2017/06/27/Linux下配置静态IP/index.html';
 this.page.identifier = undefined;
 };
 

@@ -1,0 +1,235 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="google-site-verification" content="" />
+  
+  <title>Oracle-RAC-12cR2安装手册(1)--虚拟机的准备</title>
+  <meta name="author" content="Jayce">
+   <meta name="description" content="创建第一台虚拟机
+安装操作系统
+配置第一台虚拟机
+配置子网
+添加网卡
+固定IP
+
+
+
+
+创建第一台虚拟机
+Name: node01; Type: Linux; Version: Oracle(64-bit)→Continue👆🏻Memory size:4096M→Continue👆🏻Crea">
+  
+
+  <meta property="og:title" content="Oracle-RAC-12cR2安装手册(1)--虚拟机的准备"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="JR4ever"/>
+ <meta property="og:image" content="undefined"/>
+  
+  <link href="/apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
+  <link rel="alternate" href="/atom.xml" title="JR4ever" type="application/atom+xml">
+  <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/m.min.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+
+<body>
+  <a id="top"></a>
+  <div id='wx_pic' style='display:none;'><img src='/wx_share.png'/></div>
+  <div id="main">
+    <div class="behind">
+      <div class="back">
+        <a href="/" class="black-color"><i class="fa fa-times" aria-hidden="true"></i></a>
+      </div>
+      <div class="description">
+        &nbsp;JR4ever
+      </div>
+    </div>
+    <div class="container">
+      
+
+  <article class="standard post">
+    <div class="title">
+      
+  
+    <h1 class="page-title center">
+        Oracle-RAC-12cR2安装手册(1)--虚拟机的准备
+    </h1>
+  
+
+
+    </div>
+    <div class="meta center">
+      
+<time datetime="2017-06-23T06:07:00.000Z">
+  <i class="fa fa-calendar"></i>&nbsp;
+  2017-06-23
+</time>
+
+
+
+    
+    &nbsp;
+    <i class="fa fa-tag"></i>&nbsp;
+    <a href="/categories/Oracle/">Oracle</a>·<a href="/categories/Oracle/RAC/">RAC</a>
+
+
+
+
+    
+    &nbsp;
+    <i class="fa fa-tag"></i>&nbsp;
+    <a href="/tags/Tech/">Tech</a>·<a href="/tags/Installation/">Installation</a>
+
+
+    </div>
+    <hr>
+    <div class="picture-container">
+      
+    </div>
+    <!-- toc -->
+<ul>
+<li><a href="#创建第一台虚拟机">创建第一台虚拟机</a></li>
+<li><a href="#安装操作系统">安装操作系统</a></li>
+<li><a href="#配置第一台虚拟机">配置第一台虚拟机</a><ul>
+<li><a href="#配置子网">配置子网</a></li>
+<li><a href="#添加网卡">添加网卡</a></li>
+<li><a href="#固定ip">固定IP</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+<h3 id="创建第一台虚拟机"><a href="#u521B_u5EFA_u7B2C_u4E00_u53F0_u865A_u62DF_u673A" class="headerlink" title="创建第一台虚拟机"></a>创建第一台虚拟机</h3><img src="/2017/06/23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/node01-creation-0.png" alt="node01-creation" title="node01-creation">
+<p>Name: node01; Type: Linux; Version: Oracle(64-bit)→Continue👆🏻<br><img src="/2017/06/23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/node01-creation-1.png" alt="node01-creation" title="node01-creation"><br>Memory size:4096M→Continue👆🏻<br><img src="/2017/06/23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/node01-creation-2.png" alt="node01-creation" title="node01-creation"><br>Create a virtual hard disk now→Create👆🏻<br><img src="/2017/06/23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/node01-creation-3.png" alt="node01-creation" title="node01-creation"><br>VDI→Continue👆🏻<br><img src="/2017/06/23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/node01-creation-4.png" alt="node01-creation" title="node01-creation"><br>Dynamically allocated→Continue👆🏻<br><img src="/2017/06/23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/node01-creation-5.png" alt="node01-creation" title="node01-creation"><br>Name: node01; Size: 40G→Create👆🏻<br><img src="/2017/06/23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/node01-creation-6.png" alt="node01-creation" title="node01-creation"><br>done👆🏻</p>
+<h3 id="安装操作系统"><a href="#u5B89_u88C5_u64CD_u4F5C_u7CFB_u7EDF" class="headerlink" title="安装操作系统"></a>安装操作系统</h3><img src="/2017/06/23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/node01-os-installation-0.png" alt="node01-os-installation" title="node01-os-installation">
+<p>Setting👆🏻<br><img src="/2017/06/23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/node01-os-installation-1.png" alt="node01-os-installation" title="node01-os-installation"><br>Storage→Controller:IDE→Optical Drive👆🏻<br><img src="/2017/06/23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/node01-os-installation-2.png" alt="node01-os-installation" title="node01-os-installation"><br>选择新的或者添加过的镜像文件，此处为Oracle Linux 6.9_x86_64👆🏻<br><img src="/2017/06/23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/node01-os-installation-3.png" alt="node01-os-installation" title="node01-os-installation"><br>OK👆🏻<br><img src="/2017/06/23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/node01-os-installation-4.png" alt="node01-os-installation" title="node01-os-installation"><br>启动👆🏻<br><img src="/2017/06/23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/node01-os-installation-5.png" alt="node01-os-installation" title="node01-os-installation"><br>启动中👆🏻<br>操作系统的安装步骤省略，可参考<a href="../../23/Oracle-Linux-6-9-x86-64安装手册/">Oracle Linux 6.9_x86_64安装手册</a></p>
+<h3 id="配置第一台虚拟机"><a href="#u914D_u7F6E_u7B2C_u4E00_u53F0_u865A_u62DF_u673A" class="headerlink" title="配置第一台虚拟机"></a>配置第一台虚拟机</h3><p>安装Oracle RAC至少需要两块网卡，一块为公用网卡，用于给用户和应用服务器读取数据；另一块为私用网卡，用于内部节点间通讯。另外，虚拟机需要访问互联网以安装必要的依赖包。<br>VitualBox支持多种网络接入模式，默认状态下各种模式中主机、虚拟机以及互联网之间的连通性如下：</p>
+<table class="table table-striped">
+<thead>
+<tr>
+<th style="text-align:center">网络接入模式</th>
+<th style="text-align:center">主机到虚拟机</th>
+<th style="text-align:center">虚拟机到虚拟机</th>
+<th style="text-align:center">虚拟机到互联网</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Bridge</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">Y</td>
+</tr>
+<tr>
+<td style="text-align:center">Host-only</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">N</td>
+</tr>
+<tr>
+<td style="text-align:center">Internal</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">N</td>
+</tr>
+<tr>
+<td style="text-align:center">NAT</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">Y</td>
+</tr>
+</tbody>
+</table>
+
+<p>注：</p>
+<ul>
+<li>Bridge模式下，虚拟机IP受主机是否联网的影响，无法固定，不能很好的模拟真实的网络环境；</li>
+<li>Host-only模式下，也可以通过配置使得虚拟机到虚拟机、虚拟机到互联网联通，但较复杂，不推荐。</li>
+</ul>
+<p>综上所述，虚拟机需要三块网卡以模拟需要的网络环境：一块Host-only网卡使主机可以访问到虚拟机、一块Internal网卡用于节点间通讯和一块NAT网卡来访问互联网。<br>使用VirtualBox安装虚拟机时，会默认安装一块NAT网卡，因而只需要再添加两块网卡即可。配置方式如下：</p>
+<h4 id="配置子网"><a href="#u914D_u7F6E_u5B50_u7F51" class="headerlink" title="配置子网"></a>配置子网</h4><img src="/2017/06/23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/node01-configure-4.png" alt="node01-configure" title="node01-configure">
+<p>点击VirtualBox菜单栏的偏好设置👆🏻<br><img src="/2017/06/23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/node01-configure-3.png" alt="node01-configure" title="node01-configure"><br>网络→选择NAT网卡→编辑👆🏻<br><img src="/2017/06/23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/node01-configure-5.png" alt="node01-configure" title="node01-configure"><br>Network CIDR:10.10.10.0/24→OK👆🏻<br><img src="/2017/06/23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/node01-configure-6.png" alt="node01-configure" title="node01-configure"><br>接着选择Host-only网卡→编辑👆🏻<br><img src="/2017/06/23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/node01-configure-7.png" alt="node01-configure" title="node01-configure"><br>设置适配器👆🏻<br><img src="/2017/06/23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/node01-configure-8.png" alt="node01-configure" title="node01-configure"><br>设置DHCP服务器→OK👆🏻<br><img src="/2017/06/23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/node01-configure-9.png" alt="node01-configure" title="node01-configure"><br>配置完成→OK👆🏻<br>注：此时需要重启VirtualBox，使配置生效。</p>
+<h4 id="添加网卡"><a href="#u6DFB_u52A0_u7F51_u5361" class="headerlink" title="添加网卡"></a>添加网卡</h4><img src="/2017/06/23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/node01-configure-0.png" alt="node01-configure" title="node01-configure">
+<p>选择node01→设置→网络👆🏻<br><img src="/2017/06/23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/node01-configure-1.png" alt="node01-configure" title="node01-configure"><br>选择第二个适配器→启用并选择Host-only适配器且选择vboxnet0👆🏻<br><img src="/2017/06/23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/node01-configure-2.png" alt="node01-configure" title="node01-configure"><br>选择第三个适配器→启用并选择Internal网络且命名为Private IP→OK👆🏻<br>启动虚拟机，点击未连接的网卡使其联网，待所有网卡都连接成功后，查看网络配置<br><img src="/2017/06/23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/node01-configure-10.png" alt="node01-configure" title="node01-configure"><br>ifconfig👆🏻<br>观察到，前两块网卡均已分配至指定子网下，Internal网卡由于未设定子网和DHCP服务器，未获取到IP。</p>
+<h4 id="固定ip"><a href="#u56FA_u5B9AIP" class="headerlink" title="固定IP"></a>固定IP</h4><p>尝试在主机中使用Host-only网卡的IP（eth1，172.16.10.3）连接到虚拟机👇🏻<br><img src="/2017/06/23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/node01-configure-11.png" alt="node01-configure" title="node01-configure"><br>连接成功👆🏻<br>参考<a href="../../27/Linux下配置静态IP/">Linux下配置静态IP</a>来固定eth1和eth2网卡的IP<br>配置完成后，node01网络配置如下👇🏻<br><img src="/2017/06/23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/node01-configure-13.png" alt="node01-configure" title="node01-configure"></p>
+<p>To be continued…</p>
+
+
+  </article>
+  </script>
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
+  <div class="busuanzi center">
+    PV:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
+    VV:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
+    UV:&nbsp;<span id="busuanzi_value_site_uv"></span>
+  </div>
+
+
+<div id="disqus_thread"></div>
+<script>
+
+var disqus_config = function () {
+this.page.url = 'https://JayceLau.github.io/2017/06/23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/index.html';
+this.page.identifier = undefined;
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//JR4ever.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+
+
+
+    </div>
+  </div>
+  <footer class="page-footer"><div class="clearfix">
+</div>
+<div class="right-foot container">
+    <div class="firstrow">
+        <a href="#top" target="_self">
+        <i class="fa fa-arrow-right"></i>
+        </a>
+        © JR 2010-4ever
+    </div>
+    <div class="secondrow">
+        <a href="">
+        
+        </a>
+    </div>
+</div>
+<div class="clearfix">
+</div>
+</footer>
+  <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+
+// disqus scripts
+
+
+// dropdown scripts
+$(".dropdown").click(function(event) {
+  var current = $(this);
+  event.stopPropagation();
+  $(current).children(".dropdown-content")[($(current).children(".dropdown-content").hasClass("open"))?'removeClass':'addClass']("open")
+});
+$(document).click(function(){
+    $(".dropdown-content").removeClass("open");
+})
+
+var path = "/search.xml";
+searchFunc(path, 'local-search-input', 'local-search-result');
+
+</script>
+
+</body>
+</html>
