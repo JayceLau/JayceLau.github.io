@@ -120,3 +120,6 @@ marked:
   smartypants: true
   modifyAnchors: ''
   autolink: true
+
+admin:
+  deployCommand: './hexo-deploy.sh'
