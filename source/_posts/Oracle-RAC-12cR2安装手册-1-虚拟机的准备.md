@@ -91,12 +91,72 @@ ifconfig👆🏻
 尝试在主机中使用Host-only网卡的IP（eth1，172.16.10.3）连接到虚拟机👇🏻
 {% asset_img node01-configure-11.png node01-configure %}
 连接成功👆🏻
-参考[Linux下配置静态IP](../../27/Linux下配置静态IP/)来固定eth1和eth2网卡的IP
+参考[Linux下配置静态IP](../../27/Linux下配置静态IP/)来固定eth1和eth2网卡的IP（eth0只用来连接互联网无需固定）
 配置完成后，node01网络配置如下👇🏻
 {% asset_img node01-configure-13.png node01-configure %}
-
-To be continued...
-
-[comment]: <> (克隆第二台虚拟机)
-[comment]: <> (克隆第二台虚拟机)
-[comment]: <> (添加共享磁盘)
+### 克隆第二台虚拟机
+克隆第二台虚拟机时，需关闭第一台虚拟机。
+{% asset_img node02-clone-0.png node02-clone %}
+选择node01右键→克隆👆🏻
+{% asset_img node02-clone-1.png node02-clone %}
+虚拟机名设置为node02→克隆👆🏻
+{% asset_img node02-clone-2.png node02-clone %}
+等待克隆完成👆🏻
+{% asset_img node02-clone-3.png node02-clone %}
+克隆完成👆🏻
+{% asset_img node02-clone-4.png node02-clone %}
+启动node02👆🏻
+{% asset_img node02-clone-5.png node02-clone %}
+启动成功👆🏻
+{% asset_img node02-clone-6.png node02-clone %}
+查看node02的IP👆🏻
+由于node02是由node01克隆而来，主机名和IP完全与之一致，需修改。
+### 配置第二台虚拟机
+#### 修改主机名
+参考[Linux下修改hostname](../../28/Linux下修改hostname/)将node02的hostname修改为node02.myCluster.com
+#### 修改IP
+仍旧参考[Linux下配置静态IP](../../27/Linux下配置静态IP/)来固定eth1和eth2网卡的IP
+配置完成后，node02网络配置如下👇🏻
+{% asset_img node02-configure-0.png node02-configuration %}
+### 添加共享磁盘
+添加共享磁盘时，需关闭node01和node02。
+#### 为第一台虚拟机添加磁盘
+{% asset_img nodes-add-share-disk-0.png nodes-add-share-disk %}
+选择node01→设置👆🏻
+{% asset_img nodes-add-share-disk-1.png nodes-add-share-disk %}
+选择存储→添加硬盘👆🏻
+{% asset_img nodes-add-share-disk-2.png nodes-add-share-disk %}
+创建新的硬盘👆🏻
+{% asset_img nodes-add-share-disk-3.png nodes-add-share-disk %}
+选择VDI→继续👆🏻
+{% asset_img nodes-add-share-disk-4.png nodes-add-share-disk %}
+选择固定大小→继续👆🏻
+{% asset_img nodes-add-share-disk-5.png nodes-add-share-disk %}
+目录选择两个虚拟机的父级目录并命名为asm.vdi，大小设置为13G👆🏻
+{% asset_img nodes-add-share-disk-6.png nodes-add-share-disk %}
+创建中👆🏻
+{% asset_img nodes-add-share-disk-7.png nodes-add-share-disk %}
+OK👆🏻
+{% asset_img nodes-add-share-disk-8.png nodes-add-share-disk %}
+添加完成👆🏻
+#### 将磁盘设置为共享磁盘
+{% asset_img nodes-add-share-disk-9.png nodes-add-share-disk %}
+点击VirtualBox菜单栏的文件→虚拟介质管理器👆🏻
+{% asset_img nodes-add-share-disk-10.png nodes-add-share-disk %}
+选择刚创建的磁盘文件→修改👆🏻
+{% asset_img nodes-add-share-disk-11.png nodes-add-share-disk %}
+设置磁盘类型为可共享→OK👆🏻
+{% asset_img nodes-add-share-disk-12.png nodes-add-share-disk %}
+设置完成👆🏻
+#### 将共享磁盘添加到第二台虚拟机
+{% asset_img nodes-add-share-disk-13.png nodes-add-share-disk %}
+选择node02→设置👆🏻
+{% asset_img nodes-add-share-disk-14.png nodes-add-share-disk %}
+选择存储→添加硬盘👆🏻
+{% asset_img nodes-add-share-disk-15.png nodes-add-share-disk %}
+选择已存在的磁盘👆🏻
+{% asset_img nodes-add-share-disk-16.png nodes-add-share-disk %}
+选择上一步中创建的asm.vdi→打开👆🏻
+{% asset_img nodes-add-share-disk-17.png nodes-add-share-disk %}
+添加完成👆🏻
+至此完成了虚拟机的准备工作。
