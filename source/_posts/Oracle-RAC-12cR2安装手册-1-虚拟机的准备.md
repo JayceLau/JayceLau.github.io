@@ -159,4 +159,8 @@ OK👆🏻
 选择上一步中创建的asm.vdi→打开👆🏻
 {% asset_img nodes-add-share-disk-17.png nodes-add-share-disk %}
 添加完成👆🏻
+分别启动两台虚拟机，使用`fdisk -l`查看磁盘是否添加成功👇🏻
+{% asset_img nodes-add-share-disk-18.png nodes-add-share-disk %}{% asset_img nodes-add-share-disk-19.png nodes-add-share-disk %}
+添加成功👆🏻
+由于算法的不同，实际大小略有差异，属于正常范围。
 至此完成了虚拟机的准备工作。
