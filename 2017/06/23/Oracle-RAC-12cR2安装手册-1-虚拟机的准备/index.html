@@ -7,7 +7,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="google-site-verification" content="" />
   
-  <title>Oracle-RAC-12cR2安装手册(1)--虚拟机的准备</title>
+  <title>Oracle RAC 12cR2安装手册(1)--虚拟机的准备</title>
   <meta name="author" content="Jayce">
    <meta name="description" content="创建第一台虚拟机
 安装操作系统
@@ -35,7 +35,7 @@
 Name: node01; Type:">
   
 
-  <meta property="og:title" content="Oracle-RAC-12cR2安装手册(1)--虚拟机的准备"/>
+  <meta property="og:title" content="Oracle RAC 12cR2安装手册(1)--虚拟机的准备"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:site_name" content="JR4ever"/>
  <meta property="og:image" content="undefined"/>
@@ -68,7 +68,7 @@ Name: node01; Type:">
       
   
     <h1 class="page-title center">
-        Oracle-RAC-12cR2安装手册(1)--虚拟机的准备
+        Oracle RAC 12cR2安装手册(1)--虚拟机的准备
     </h1>
   
 
@@ -188,7 +188,7 @@ Name: node01; Type:">
 <h4 id="将磁盘设置为共享磁盘"><a href="#u5C06_u78C1_u76D8_u8BBE_u7F6E_u4E3A_u5171_u4EAB_u78C1_u76D8" class="headerlink" title="将磁盘设置为共享磁盘"></a>将磁盘设置为共享磁盘</h4><img src="/2017/06/23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/nodes-add-share-disk-9.png" alt="nodes-add-share-disk" title="nodes-add-share-disk">
 <p>点击VirtualBox菜单栏的文件→虚拟介质管理器👆🏻<br><img src="/2017/06/23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/nodes-add-share-disk-10.png" alt="nodes-add-share-disk" title="nodes-add-share-disk"><br>选择刚创建的磁盘文件→修改👆🏻<br><img src="/2017/06/23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/nodes-add-share-disk-11.png" alt="nodes-add-share-disk" title="nodes-add-share-disk"><br>设置磁盘类型为可共享→OK👆🏻<br><img src="/2017/06/23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/nodes-add-share-disk-12.png" alt="nodes-add-share-disk" title="nodes-add-share-disk"><br>设置完成👆🏻</p>
 <h4 id="将共享磁盘添加到第二台虚拟机"><a href="#u5C06_u5171_u4EAB_u78C1_u76D8_u6DFB_u52A0_u5230_u7B2C_u4E8C_u53F0_u865A_u62DF_u673A" class="headerlink" title="将共享磁盘添加到第二台虚拟机"></a>将共享磁盘添加到第二台虚拟机</h4><img src="/2017/06/23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/nodes-add-share-disk-13.png" alt="nodes-add-share-disk" title="nodes-add-share-disk">
-<p>选择node02→设置👆🏻<br><img src="/2017/06/23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/nodes-add-share-disk-14.png" alt="nodes-add-share-disk" title="nodes-add-share-disk"><br>选择存储→添加硬盘👆🏻<br><img src="/2017/06/23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/nodes-add-share-disk-15.png" alt="nodes-add-share-disk" title="nodes-add-share-disk"><br>选择已存在的磁盘👆🏻<br><img src="/2017/06/23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/nodes-add-share-disk-16.png" alt="nodes-add-share-disk" title="nodes-add-share-disk"><br>选择上一步中创建的asm.vdi→打开👆🏻<br><img src="/2017/06/23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/nodes-add-share-disk-17.png" alt="nodes-add-share-disk" title="nodes-add-share-disk"><br>添加完成👆🏻<br>至此完成了虚拟机的准备工作。</p>
+<p>选择node02→设置👆🏻<br><img src="/2017/06/23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/nodes-add-share-disk-14.png" alt="nodes-add-share-disk" title="nodes-add-share-disk"><br>选择存储→添加硬盘👆🏻<br><img src="/2017/06/23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/nodes-add-share-disk-15.png" alt="nodes-add-share-disk" title="nodes-add-share-disk"><br>选择已存在的磁盘👆🏻<br><img src="/2017/06/23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/nodes-add-share-disk-16.png" alt="nodes-add-share-disk" title="nodes-add-share-disk"><br>选择上一步中创建的asm.vdi→打开👆🏻<br><img src="/2017/06/23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/nodes-add-share-disk-17.png" alt="nodes-add-share-disk" title="nodes-add-share-disk"><br>添加完成👆🏻<br>分别启动两台虚拟机，使用<code>fdisk -l</code>查看磁盘是否添加成功👇🏻<br><img src="/2017/06/23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/nodes-add-share-disk-18.png" alt="nodes-add-share-disk" title="nodes-add-share-disk"><img src="/2017/06/23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/nodes-add-share-disk-19.png" alt="nodes-add-share-disk" title="nodes-add-share-disk"><br>添加成功👆🏻<br>由于算法的不同，实际大小略有差异，属于正常范围。<br>至此完成了虚拟机的准备工作。<br>下一篇<a href="../../29/Oracle-RAC-12cR2安装手册-2-环境的准备/">Oracle RAC 12cR2安装手册(2)–环境的准备</a></p>
 
 
   </article>
