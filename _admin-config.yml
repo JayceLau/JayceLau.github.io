@@ -2,8 +2,8 @@ options:
   askImageFilename: false
   spellcheck: true
   lineNumbers: true
-  imagePath: _posts/Oracle-RAC-12cR2安装手册-1-虚拟机的准备
-  imagePrefix: nodes-add-share-disk-
+  imagePath: _posts/Oracle-RAC-12cR2安装手册-4-数据库软件的安装
+  imagePrefix: database-software-installation-
 editor:
   inputStyle: contenteditable
   spellcheck: true

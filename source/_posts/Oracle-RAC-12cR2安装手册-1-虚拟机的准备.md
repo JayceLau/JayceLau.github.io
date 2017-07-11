@@ -1,4 +1,4 @@
-title: Oracle-RAC-12cR2安装手册(1)--虚拟机的准备
+title: Oracle RAC 12cR2安装手册(1)--虚拟机的准备
 categories:
   - Oracle
   - RAC
@@ -10,7 +10,6 @@ date: 2017-06-23 14:07:00
 ---
 <!-- toc -->
 ### 创建第一台虚拟机
-
 {% asset_img node01-creation-0.png node01-creation %}
 Name: node01; Type: Linux; Version: Oracle(64-bit)→Continue👆🏻
 {% asset_img node01-creation-1.png node01-creation %}
@@ -132,7 +131,7 @@ ifconfig👆🏻
 {% asset_img nodes-add-share-disk-4.png nodes-add-share-disk %}
 选择固定大小→继续👆🏻
 {% asset_img nodes-add-share-disk-5.png nodes-add-share-disk %}
-目录选择两个虚拟机的父级目录并命名为asm.vdi，大小设置为13G👆🏻
+目录选择两个虚拟机的父级目录并命名为asm.vdi，大小设置为60G👆🏻
 {% asset_img nodes-add-share-disk-6.png nodes-add-share-disk %}
 创建中👆🏻
 {% asset_img nodes-add-share-disk-7.png nodes-add-share-disk %}
@@ -163,4 +162,5 @@ OK👆🏻
 {% asset_img nodes-add-share-disk-18.png nodes-add-share-disk %}{% asset_img nodes-add-share-disk-19.png nodes-add-share-disk %}
 添加成功👆🏻
 由于算法的不同，实际大小略有差异，属于正常范围。
-至此完成了虚拟机的准备工作。
+至此，完成了虚拟机的准备工作。
+下一篇[Oracle RAC 12cR2安装手册(2)--环境的准备](../../29/Oracle-RAC-12cR2安装手册-2-环境的准备/)
