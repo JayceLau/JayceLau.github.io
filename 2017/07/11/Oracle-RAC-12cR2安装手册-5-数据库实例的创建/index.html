@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="google-site-verification" content="" />
+  
+  <title>Oracle RAC 12cR2安装手册(5)--数据库实例的创建</title>
+  <meta name="author" content="Jayce">
+   <meta name="description" content="在node01上执行1dbca
+
+创建一个数据库→下一步👆🏻高级配置→下一步👆🏻选择自定义数据库→下一步👆🏻选择所有节点→下一步👆🏻设置全局数据库名和SID前缀，选择创建空白容器数据库→下一步👆🏻
+
+注：  此处的SID前缀需要与环境变量里的ORACLE_SID对应：    例如">
+  
+
+  <meta property="og:title" content="Oracle RAC 12cR2安装手册(5)--数据库实例的创建"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="JR4ever"/>
+ <meta property="og:image" content="undefined"/>
+  
+  <link href="/apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
+  <link rel="alternate" href="/atom.xml" title="JR4ever" type="application/atom+xml">
+  <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/m.min.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+
+<body>
+  <a id="top"></a>
+  <div id='wx_pic' style='display:none;'><img src='/wx_share.png'/></div>
+  <div id="main">
+    <div class="behind">
+      <div class="back">
+        <a href="/" class="black-color"><i class="fa fa-times" aria-hidden="true"></i></a>
+      </div>
+      <div class="description">
+        &nbsp;JR4ever
+      </div>
+    </div>
+    <div class="container">
+      
+
+  <article class="standard post">
+    <div class="title">
+      
+  
+    <h1 class="page-title center">
+        Oracle RAC 12cR2安装手册(5)--数据库实例的创建
+    </h1>
+  
+
+
+    </div>
+    <div class="meta center">
+      
+<time datetime="2017-07-11T15:49:34.000Z">
+  <i class="fa fa-calendar"></i>&nbsp;
+  2017-07-11
+</time>
+
+
+
+    
+    &nbsp;
+    <i class="fa fa-tag"></i>&nbsp;
+    <a href="/categories/Oracle/">Oracle</a>·<a href="/categories/Oracle/RAC/">RAC</a>
+
+
+
+
+    
+    &nbsp;
+    <i class="fa fa-tag"></i>&nbsp;
+    <a href="/tags/Tech/">Tech</a>·<a href="/tags/Installation/">Installation</a>
+
+
+    </div>
+    <hr>
+    <div class="picture-container">
+      
+    </div>
+    <p>在node01上执行<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">dbca</span></div></pre></td></tr></table></figure></p>
+<img src="/2017/07/11/Oracle-RAC-12cR2安装手册-5-数据库实例的创建/database-instance-creation-0.png" alt="database-instance-creation" title="database-instance-creation">
+<p>创建一个数据库→下一步👆🏻<br><img src="/2017/07/11/Oracle-RAC-12cR2安装手册-5-数据库实例的创建/database-instance-creation-1.png" alt="database-instance-creation" title="database-instance-creation"><br>高级配置→下一步👆🏻<br><img src="/2017/07/11/Oracle-RAC-12cR2安装手册-5-数据库实例的创建/database-instance-creation-2.png" alt="database-instance-creation" title="database-instance-creation"><br>选择自定义数据库→下一步👆🏻<br><img src="/2017/07/11/Oracle-RAC-12cR2安装手册-5-数据库实例的创建/database-instance-creation-3.png" alt="database-instance-creation" title="database-instance-creation"><br>选择所有节点→下一步👆🏻<br><img src="/2017/07/11/Oracle-RAC-12cR2安装手册-5-数据库实例的创建/database-instance-creation-4.png" alt="database-instance-creation" title="database-instance-creation"><br>设置全局数据库名和SID前缀，选择创建空白容器数据库→下一步👆🏻</p>
+<blockquote>
+<p>注：<br>  此处的SID前缀需要与环境变量里的ORACLE_SID对应：<br>    例如，SID前缀设置orcl，ORACLE_SID需要设置为orcl1和orcl2。</p>
+</blockquote>
+<img src="/2017/07/11/Oracle-RAC-12cR2安装手册-5-数据库实例的创建/database-instance-creation-5.png" alt="database-instance-creation" title="database-instance-creation">
+<p>选择ASM存储类型并选择DATA磁盘组→下一步👆🏻<br><img src="/2017/07/11/Oracle-RAC-12cR2安装手册-5-数据库实例的创建/database-instance-creation-6.png" alt="database-instance-creation" title="database-instance-creation"><br>启用快速闪回去，并选择DATA磁盘组，大小设置为5120M→下一步👆🏻<br><img src="/2017/07/11/Oracle-RAC-12cR2安装手册-5-数据库实例的创建/database-instance-creation-6-1.png" alt="database-instance-creation" title="database-instance-creation"><br>确定继续👆🏻<br><img src="/2017/07/11/Oracle-RAC-12cR2安装手册-5-数据库实例的创建/database-instance-creation-7.png" alt="database-instance-creation" title="database-instance-creation"><br>默认→下一步👆🏻<br><img src="/2017/07/11/Oracle-RAC-12cR2安装手册-5-数据库实例的创建/database-instance-creation-8.png" alt="database-instance-creation" title="database-instance-creation"><br>选择自动共享内存管理，并设置Memory Target约为物理内存的80%👆🏻<br><img src="/2017/07/11/Oracle-RAC-12cR2安装手册-5-数据库实例的创建/database-instance-creation-9.png" alt="database-instance-creation" title="database-instance-creation"><br>块大小设置为32768B，进程数设置为1500👆🏻<br><img src="/2017/07/11/Oracle-RAC-12cR2安装手册-5-数据库实例的创建/database-instance-creation-10.png" alt="database-instance-creation" title="database-instance-creation"><br>字符集选择AL32UTF8👆🏻<br><img src="/2017/07/11/Oracle-RAC-12cR2安装手册-5-数据库实例的创建/database-instance-creation-11.png" alt="database-instance-creation" title="database-instance-creation"><br>连接模式选择专用服务器模式→下一步👆🏻<br><img src="/2017/07/11/Oracle-RAC-12cR2安装手册-5-数据库实例的创建/database-instance-creation-12.png" alt="database-instance-creation" title="database-instance-creation"><br>确认继续→下一步👆🏻<br><img src="/2017/07/11/Oracle-RAC-12cR2安装手册-5-数据库实例的创建/database-instance-creation-13.png" alt="database-instance-creation" title="database-instance-creation"><br>不配置EM→下一步👆🏻<br><img src="/2017/07/11/Oracle-RAC-12cR2安装手册-5-数据库实例的创建/database-instance-creation-14.png" alt="database-instance-creation" title="database-instance-creation"><br>使用统一密码→下一步👆🏻<br><img src="/2017/07/11/Oracle-RAC-12cR2安装手册-5-数据库实例的创建/database-instance-creation-15.png" alt="database-instance-creation" title="database-instance-creation"><br>创建数据库→下一步👆🏻<br><img src="/2017/07/11/Oracle-RAC-12cR2安装手册-5-数据库实例的创建/database-instance-creation-16.png" alt="database-instance-creation" title="database-instance-creation"><br>再次确认继续👆🏻<br><img src="/2017/07/11/Oracle-RAC-12cR2安装手册-5-数据库实例的创建/database-instance-creation-17.png" alt="database-instance-creation" title="database-instance-creation"><br>执行先决条件检查👆🏻<br><img src="/2017/07/11/Oracle-RAC-12cR2安装手册-5-数据库实例的创建/database-instance-creation-18.png" alt="database-instance-creation" title="database-instance-creation"><br>忽略全部→下一步👆🏻<br><img src="/2017/07/11/Oracle-RAC-12cR2安装手册-5-数据库实例的创建/database-instance-creation-19.png" alt="database-instance-creation" title="database-instance-creation"><br>确认继续👆🏻<br><img src="/2017/07/11/Oracle-RAC-12cR2安装手册-5-数据库实例的创建/database-instance-creation-20.png" alt="database-instance-creation" title="database-instance-creation"><br>完成👆🏻<br><img src="/2017/07/11/Oracle-RAC-12cR2安装手册-5-数据库实例的创建/database-instance-creation-21.png" alt="database-instance-creation" title="database-instance-creation"><br>创建进行中👆🏻<br><img src="/2017/07/11/Oracle-RAC-12cR2安装手册-5-数据库实例的创建/database-instance-creation-22.png" alt="database-instance-creation" title="database-instance-creation"><br>创建完成→关闭👆🏻<br>分别在node01和node02上执行<code>lsnrctl status</code>查看实例运行状态👇🏻<br><img src="/2017/07/11/Oracle-RAC-12cR2安装手册-5-数据库实例的创建/database-instance-creation-23.png" alt="database-instance-creation" title="database-instance-creation"><br>node01状态正常👆🏻<br><img src="/2017/07/11/Oracle-RAC-12cR2安装手册-5-数据库实例的创建/database-instance-creation-24.png" alt="database-instance-creation" title="database-instance-creation"><br>node02状态正常👆🏻<br>执行<code>sqlplus / as sysdba</code>登录数据库👇🏻<br><img src="/2017/07/11/Oracle-RAC-12cR2安装手册-5-数据库实例的创建/database-instance-creation-25.png" alt="database-instance-creation" title="database-instance-creation"><br>登录成功👆🏻<br>执行<code>show pdbs</code>查看PDB状态👇🏻<br><img src="/2017/07/11/Oracle-RAC-12cR2安装手册-5-数据库实例的创建/database-instance-creation-26.png" alt="database-instance-creation" title="database-instance-creation"><br>可以看到一个种子PDB👆🏻<br>至此，完成了数据库实例的创建。</p>
+
+
+  </article>
+  </script>
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
+  <div class="busuanzi center">
+    PV:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
+    VV:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
+    UV:&nbsp;<span id="busuanzi_value_site_uv"></span>
+  </div>
+
+
+<div id="disqus_thread"></div>
+<script>
+
+var disqus_config = function () {
+this.page.url = 'https://JayceLau.github.io/2017/07/11/Oracle-RAC-12cR2安装手册-5-数据库实例的创建/index.html';
+this.page.identifier = undefined;
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//JR4ever.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+
+
+
+    </div>
+  </div>
+  <footer class="page-footer"><div class="clearfix">
+</div>
+<div class="right-foot container">
+    <div class="firstrow">
+        <a href="#top" target="_self">
+        <i class="fa fa-arrow-right"></i>
+        </a>
+        © JR 2010-4ever
+    </div>
+    <div class="secondrow">
+        <a href="">
+        
+        </a>
+    </div>
+</div>
+<div class="clearfix">
+</div>
+</footer>
+  <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+
+// disqus scripts
+
+
+// dropdown scripts
+$(".dropdown").click(function(event) {
+  var current = $(this);
+  event.stopPropagation();
+  $(current).children(".dropdown-content")[($(current).children(".dropdown-content").hasClass("open"))?'removeClass':'addClass']("open")
+});
+$(document).click(function(){
+    $(".dropdown-content").removeClass("open");
+})
+
+var path = "/search.xml";
+searchFunc(path, 'local-search-input', 'local-search-result');
+
+</script>
+
+</body>
+</html>
