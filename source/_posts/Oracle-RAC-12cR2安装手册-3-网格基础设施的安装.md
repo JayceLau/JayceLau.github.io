@@ -97,10 +97,27 @@ cd /u01/app/12.1.0/grid/
 确认继续👆🏻
 {% asset_img grid-infrastructure-installation-26.png grid-infrastructure-installation %}
 关闭👆🏻
-### 检查确认
-使用grid用户在node01和node02上执行
-`crs_stat -v -t`
+使用grid用户分别在node01和node02上执行`crs_stat -v -t`查看服务运行状态👇🏻
 {% asset_img grid-infrastructure-check-0.png grid-infrastructure-check %}
-部分服务处于OFFLINE状态，可以忽略👆🏻
+node01👆🏻
+{% asset_img grid-infrastructure-check-1.png grid-infrastructure-check %}
+node02👆🏻
+> 注：
+    部分服务处于OFFLINE状态，可以忽略。
+
+### 创建其他磁盘组
+使用grid用户登录node01或切换至grid用户执行`asmca`
+{% asset_img asm-disk-group-creation-0.png asm-disk-group-creation %}
+欢迎界面👆🏻
+{% asset_img asm-disk-group-creation-1.png asm-disk-group-creation %}
+选择磁盘组→创建👆🏻
+{% asset_img asm-disk-group-creation-2.png asm-disk-group-creation %}
+创建DATA磁盘，选择外部冗余，选择DATA磁盘→OK👆🏻
+{% asset_img asm-disk-group-creation-3.png asm-disk-group-creation %}
+创建中👆🏻
+{% asset_img asm-disk-group-creation-4.png asm-disk-group-creation %}
+创建完成→退出👆🏻
+{% asset_img asm-disk-group-creation-5.png asm-disk-group-creation %}
+确认退出👆🏻
 至此，完成了网格基础设施的安装。
 下一篇[Oracle RAC 12cR2安装手册(4)--数据库软件的安装](../../../07/07/Oracle-RAC-12cR2安装手册-4-数据库软件的安装/)

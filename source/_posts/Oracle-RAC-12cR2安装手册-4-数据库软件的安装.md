@@ -51,3 +51,4 @@ OK👆🏻
 {% asset_img database-software-installation-17.png database-software-installation %}
 关闭👆🏻
 至此，完成了数据库软件的安装。
+下一篇[Oracle RAC 12cR2安装手册(5)--数据库实例的创建](../../../07/11/Oracle-RAC-12cR2安装手册-5-数据库实例的创建/)

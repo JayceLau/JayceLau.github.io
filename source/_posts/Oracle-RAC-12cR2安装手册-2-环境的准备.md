@@ -134,7 +134,7 @@ export CLASSPATH=$ORACLE_HOME/JRE:$ORACLE_HOME/jlib:$ORACLE_HOME/rdbms/jlib
 export LC_ALL=en_US.UTF-8
 ```
 ##### 配置oracle的环境变量
-node01和node02上分别执行
+node01上执行
 编辑/home/oracle/.bash_profile文件
 `vi /home/oracle/.bash_profile`
 添加
@@ -142,6 +142,22 @@ node01和node02上分别执行
 export TMP=/tmp
 export ORACLE_BASE=/u01/app/oracle
 export ORACLE_HOME=$ORACLE_BASE/product/12.2.0/dbhome_1
+export ORACLE_SID=orcl_1
+export PATH=$ORACLE_HOME/bin:/usr/sbin:$ORACLE_HOME/OPatch:$PATH
+export LD_LIBRARY_PATH=$ORACLE_HOME/lib:/lib:/usr/lib
+export CLASSPATH=$ORACLE_HOME/JRE:$ORACLE_HOME/jlib:$ORACLE_HOME/rdbms/jlib
+export NLS_LANG=AMERICAN_AMERICA.UTF8
+export LC_ALL=en_US.UTF-8
+```
+node02上执行
+编辑/home/oracle/.bash_profile文件
+`vi /home/oracle/.bash_profile`
+添加
+```
+export TMP=/tmp
+export ORACLE_BASE=/u01/app/oracle
+export ORACLE_HOME=$ORACLE_BASE/product/12.2.0/dbhome_1
+export ORACLE_SID=orcl_2
 export PATH=$ORACLE_HOME/bin:/usr/sbin:$ORACLE_HOME/OPatch:$PATH
 export LD_LIBRARY_PATH=$ORACLE_HOME/lib:/lib:/usr/lib
 export CLASSPATH=$ORACLE_HOME/JRE:$ORACLE_HOME/jlib:$ORACLE_HOME/rdbms/jlib

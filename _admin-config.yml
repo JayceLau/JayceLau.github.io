@@ -2,8 +2,8 @@ options:
   askImageFilename: false
   spellcheck: true
   lineNumbers: true
-  imagePath: _posts/Oracle-RAC-12cR2安装手册-4-数据库软件的安装
-  imagePrefix: database-software-installation-
+  imagePath: _posts/Oracle-RAC-12cR2安装手册-5-数据库实例的创建
+  imagePrefix: database-instance-creation-
 editor:
   inputStyle: contenteditable
   spellcheck: true
