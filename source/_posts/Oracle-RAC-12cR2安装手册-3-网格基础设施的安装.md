@@ -14,13 +14,13 @@ date: 2017-07-05 11:08:00
 ### 安装CVU
 node01上执行
 ```
-cd /u01/app/12.1.0/grid/cv/rpm/
+cd /u01/app/12.2.0/grid/cv/rpm/
 rpm -ivh cvuqdisk-1.0.10-1.rpm
 ```
 在node01上检查
 使用grid用户登录node01或切换至grid用户
 ```
-cd /u01/app/12.1.0/grid/
+cd /u01/app/12.2.0/grid/
 ./runcluvfy.sh stage -pre crsinst -n node01,node02 -fixup -verbose
 ```
 {% asset_img grid-infrastructure-cvu-0.png grid-infrastructure-cvu %}
@@ -35,7 +35,7 @@ cd /u01/app/12.1.0/grid/
 在node01上执行
 使用grid用户登录node01或切换至grid用户
 ```
-cd /u01/app/12.1.0/grid/
+cd /u01/app/12.2.0/grid/
 ./gridSetup.sh
 ```
 安装过程如下
