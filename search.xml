@@ -277,7 +277,7 @@
 <blockquote>
 <p>注：</p>
 <ol>
-<li>本文使用的磁盘为/dev/sdb，OCR磁盘组的冗余类型为Normal，DATA磁盘组的冗余类型为External。/dev/sdb共60G空间，创建3个40G分区给OCR_VOT_GIMR磁盘组使用，剩余20G分配至DATA磁盘组。</li>
+<li>本文使用的磁盘为/dev/sdb，受限磁盘空间，OCR_VOT_GIMR磁盘组和DATA磁盘组的冗余类型都选择为External。/dev/sdb共60G空间，创建1个40G分区分配给OCR_VOT_GIMR磁盘组使用，创建一个20G分区分配至DATA磁盘组。</li>
 <li>本文仅演示安装过程，关于ASM磁盘的大小<a href="https://docs.oracle.com/database/122/CWLIN/oracle-clusterware-storage-space-requirements.htm#CWLIN-GUID-97FD5D40-A65B-4575-AD12-06C491AF3F41" target="_blank" rel="external">官方文档</a>有具体的最小限制，实际生产中请注意。</li>
 </ol>
 </blockquote>
