@@ -219,13 +219,13 @@ node01和node02分别执行
 NOZEROCONF=yes
 ```
 ### 配置SSH互信
-使用grid用户登录node01或切换到grid用户，解压linuxx64_12201_grid_home.zip，分别为grid用户和oracle用户配置SSH互信。
+使用grid用户登录node01或切换到grid用户，分别为grid用户和oracle用户配置SSH互信。
 
 > 注：
 > 配置过程中，需要输入oracle和grid的密码，可提前为其设置密码。
 
 ```
-cd /u01/software/grid/oui/prov/resources/scripts/
+cd /u01/app/12.2.0/grid/oui/prov/resources/scripts/
 ./sshUserSetup.sh -hosts "node01 node02" -user grid  -advanced -noPromptPassphrase
 ./sshUserSetup.sh -hosts "node01 node02" -user oracle  -advanced -noPromptPassphrase
 ```
@@ -252,7 +252,7 @@ ssh node01-priv date
 ### 配置存储
 本文选用ASM作为存储方案，前文[Oracle RAC安装手册(1)虚拟机的准备](../../23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/#添加共享磁盘)中已添加共享磁盘，接下来介绍如何配置ASM。
 > 注：
-> 1. 本文使用的磁盘为/dev/sdb，OCR磁盘组的冗余类型为Normal，DATA磁盘组的冗余类型为External。/dev/sdb共13G空间，创建3个1G分区给OCR磁盘组使用，剩余10G分配至DATA磁盘组。
+> 1. 本文使用的磁盘为/dev/sdb，受限磁盘空间，OCR_VOT_GIMR磁盘组和DATA磁盘组的冗余类型都选择为External。/dev/sdb共60G空间，创建1个40G分区分配给OCR_VOT_GIMR磁盘组使用，创建一个20G分区分配至DATA磁盘组。
 > 2. 本文仅演示安装过程，关于ASM磁盘的大小[官方文档](https://docs.oracle.com/database/122/CWLIN/oracle-clusterware-storage-space-requirements.htm#CWLIN-GUID-97FD5D40-A65B-4575-AD12-06C491AF3F41)有具体的最小限制，实际生产中请注意。
 
 #### 安装ASMLIB
