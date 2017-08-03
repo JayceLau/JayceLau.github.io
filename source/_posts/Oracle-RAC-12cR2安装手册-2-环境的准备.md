@@ -106,8 +106,8 @@ chown oracle:oinstall database
 #### 配置环境变量
 ##### 配置grid用户的环境变量
 node01上执行
-编辑／home/gird/.bash_profile文件
-`vi ／home/gird/.bash_profile`
+编辑/home/grid/.bash_profile文件
+`vi /home/grid/.bash_profile`
 添加
 ```
 export ORACLE_SID=+ASM1
@@ -120,8 +120,8 @@ export CLASSPATH=$ORACLE_HOME/JRE:$ORACLE_HOME/jlib:$ORACLE_HOME/rdbms/jlib
 export LC_ALL=en_US.UTF-8
 ```
 node02上执行
-编辑／home/gird/.bash_profile文件
-`vi ／home/gird/.bash_profile`
+编辑/home/grid/.bash_profile文件
+`vi /home/grid/.bash_profile`
 添加
 ```
 export ORACLE_SID=+ASM2

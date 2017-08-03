@@ -26,7 +26,7 @@ Name: node01; Size: 40G→Create👆🏻
 done👆🏻
 ### 安装操作系统
 {% asset_img node01-os-installation-0.png node01-os-installation %}
-Setting👆🏻
+Setting👆🏻·
 {% asset_img node01-os-installation-1.png node01-os-installation %}
 Storage→Controller:IDE→Optical Drive👆🏻
 {% asset_img node01-os-installation-2.png node01-os-installation %}
