@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="google-site-verification" content="" />
+  
+  <title>在OMS服务器上提取Management Agent·</title>
+  <meta name="author" content="Jayce">
+   <meta name="description" content="登录emcliemcli login -username=sysman过程参考如下：123[oracle@emcc agent]$ emcli login -username=sysmanEnter password :Login successful
+提取agent1emcli get_agent">
+  
+
+  <meta property="og:title" content="在OMS服务器上提取Management Agent·"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="JR4ever"/>
+ <meta property="og:image" content="undefined"/>
+  
+  <link href="/apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
+  <link rel="alternate" href="/atom.xml" title="JR4ever" type="application/atom+xml">
+  <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/m.min.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+
+<body>
+  <a id="top"></a>
+  <div id='wx_pic' style='display:none;'><img src='/wx_share.png'/></div>
+  <div id="main">
+    <div class="behind">
+      <div class="back">
+        <a href="/" class="black-color"><i class="fa fa-times" aria-hidden="true"></i></a>
+      </div>
+      <div class="description">
+        &nbsp;JR4ever
+      </div>
+    </div>
+    <div class="container">
+      
+
+  <article class="standard post">
+    <div class="title">
+      
+  
+    <h1 class="page-title center">
+        在OMS服务器上提取Management Agent·
+    </h1>
+  
+
+
+    </div>
+    <div class="meta center">
+      
+<time datetime="2017-08-04T06:06:42.000Z">
+  <i class="fa fa-calendar"></i>&nbsp;
+  2017-08-04
+</time>
+
+
+
+    
+    &nbsp;
+    <i class="fa fa-tag"></i>&nbsp;
+    <a href="/categories/Oracle/">Oracle</a>·<a href="/categories/Oracle/EMCC/">EMCC</a>
+
+
+
+
+    
+    &nbsp;
+    <i class="fa fa-tag"></i>&nbsp;
+    <a href="/tags/Tech/">Tech</a>
+
+
+    </div>
+    <hr>
+    <div class="picture-container">
+      
+    </div>
+    <h3 id="登录emcli"><a href="#u767B_u5F55emcli" class="headerlink" title="登录emcli"></a>登录emcli</h3><p><code>emcli login -username=sysman</code><br>过程参考如下：<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[oracle<span class="variable">@emcc</span> agent]<span class="variable">$ </span>emcli login -username=sysman</div><div class="line">Enter password :</div><div class="line">Login successful</div></pre></td></tr></table></figure></p>
+<h3 id="提取agent"><a href="#u63D0_u53D6agent" class="headerlink" title="提取agent"></a>提取agent</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">emcli get_agentimage <span class="attribute">-destination</span>=/home/oracle/agent <span class="attribute">-platform</span>=<span class="string">"Linux x86-64"</span> <span class="attribute">-version</span>=13.2.0.0.0</div></pre></td></tr></table></figure>
+<p>过程参考如下：<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">[oracle<span class="meta">@emcc</span> agent]$ emcli get_agentimage -destination=<span class="regexp">/home/</span>oracle/agent -platform=<span class="string">"Linux x86-64"</span> -version=<span class="number">13.2</span><span class="number">.0</span><span class="number">.0</span><span class="number">.0</span></div><div class="line"> === Partition Detail ===</div><div class="line">Space <span class="string">free :</span> <span class="number">31</span> GB</div><div class="line">Space <span class="string">required :</span> <span class="number">1</span> GB</div><div class="line">Check the logs at <span class="regexp">/u01/</span>app<span class="regexp">/emcc/</span>gc_inst<span class="regexp">/em/</span>EMGC_OMS1<span class="regexp">/sysman/</span>emcli<span class="regexp">/setup/</span>.emcli/get_agentimage_2017<span class="number">-08</span><span class="number">-04</span>_13<span class="number">-55</span><span class="number">-30</span>-PM.log</div><div class="line">Downloading <span class="regexp">/home/</span>oracle<span class="regexp">/agent/</span><span class="number">13.2</span><span class="number">.0</span><span class="number">.0</span><span class="number">.0</span>_AgentCore_226.zip</div><div class="line">File saved <span class="keyword">as</span> <span class="regexp">/home/</span>oracle<span class="regexp">/agent/</span><span class="number">13.2</span><span class="number">.0</span><span class="number">.0</span><span class="number">.0</span>_AgentCore_226.zip</div><div class="line">Downloading <span class="regexp">/home/</span>oracle<span class="regexp">/agent/</span><span class="number">13.2</span><span class="number">.0</span><span class="number">.0</span><span class="number">.0</span>_Plugins_226.zip·</div><div class="line">File saved <span class="keyword">as</span> <span class="regexp">/home/</span>oracle<span class="regexp">/agent/</span><span class="number">13.2</span><span class="number">.0</span><span class="number">.0</span><span class="number">.0</span>_Plugins_226.zip</div><div class="line">Downloading <span class="regexp">/home/</span>oracle<span class="regexp">/agent/</span>unzip</div><div class="line">File saved <span class="keyword">as</span> <span class="regexp">/home/</span>oracle<span class="regexp">/agent/</span>unzip</div><div class="line">Executing <span class="string">command:</span> <span class="regexp">/home/</span>oracle<span class="regexp">/agent/</span>unzip <span class="regexp">/home/</span>oracle<span class="regexp">/agent/</span><span class="number">13.2</span><span class="number">.0</span><span class="number">.0</span><span class="number">.0</span>_Plugins_226.zip -d <span class="regexp">/home/</span>oracle/agent</div><div class="line">Exit status <span class="string">is:</span><span class="number">0</span></div><div class="line">Agent Image Download completed successfully.</div></pre></td></tr></table></figure></p>
+<h3 id="安装agent"><a href="#u5B89_u88C5agent" class="headerlink" title="安装agent"></a>安装agent</h3><p>将提取出来的agent上传至目标服务器，并解压、安装<br>过程参考如下：·<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd /u01/software</div><div class="line">unzip 13.2.0.0.0_AgentCore_226.zip</div><div class="line">./agentDeploy.sh <span class="attribute">AGENT_BASE_DIR</span>=/u01/app/emcc/agent <span class="attribute">OMS_HOST</span>=foo.bar.com <span class="attribute">EM_UPLOAD_PORT</span>=4903 <span class="attribute">LOG_DIR</span>=/home/oracle/logs</div></pre></td></tr></table></figure></p>
+
+
+  </article>
+  </script>
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
+  <div class="busuanzi center">
+    PV:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
+    VV:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
+    UV:&nbsp;<span id="busuanzi_value_site_uv"></span>
+  </div>
+
+
+<div id="disqus_thread"></div>
+<script>
+
+var disqus_config = function () {
+this.page.url = 'https://JayceLau.github.io/2017/08/04/在OMS服务器上提取Management-Agent/index.html';
+this.page.identifier = undefined;
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//JR4ever.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+
+
+
+    </div>
+  </div>
+  <footer class="page-footer"><div class="clearfix">
+</div>
+<div class="right-foot container">
+    <div class="firstrow">
+        <a href="#top" target="_self">
+        <i class="fa fa-arrow-right"></i>
+        </a>
+        © JR 2010-4ever
+    </div>
+    <div class="secondrow">
+        <a href="">
+        
+        </a>
+    </div>
+</div>
+<div class="clearfix">
+</div>
+</footer>
+  <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+
+// disqus scripts
+
+
+// dropdown scripts
+$(".dropdown").click(function(event) {
+  var current = $(this);
+  event.stopPropagation();
+  $(current).children(".dropdown-content")[($(current).children(".dropdown-content").hasClass("open"))?'removeClass':'addClass']("open")
+});
+$(document).click(function(){
+    $(".dropdown-content").removeClass("open");
+})
+
+var path = "/search.xml";
+searchFunc(path, 'local-search-input', 'local-search-result');
+
+</script>
+
+</body>
+</html>
