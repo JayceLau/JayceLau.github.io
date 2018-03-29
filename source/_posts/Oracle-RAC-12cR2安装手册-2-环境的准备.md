@@ -142,7 +142,7 @@ node01上执行
 export TMP=/tmp
 export ORACLE_BASE=/u01/app/oracle
 export ORACLE_HOME=$ORACLE_BASE/product/12.2.0/dbhome_1
-export ORACLE_SID=orcl_1
+export ORACLE_SID=orcl1
 export PATH=$ORACLE_HOME/bin:/usr/sbin:$ORACLE_HOME/OPatch:$PATH
 export LD_LIBRARY_PATH=$ORACLE_HOME/lib:/lib:/usr/lib
 export CLASSPATH=$ORACLE_HOME/JRE:$ORACLE_HOME/jlib:$ORACLE_HOME/rdbms/jlib
@@ -157,7 +157,6 @@ node02上执行
 export TMP=/tmp
 export ORACLE_BASE=/u01/app/oracle
 export ORACLE_HOME=$ORACLE_BASE/product/12.2.0/dbhome_1
-export ORACLE_SID=orcl_2
 export PATH=$ORACLE_HOME/bin:/usr/sbin:$ORACLE_HOME/OPatch:$PATH
 export LD_LIBRARY_PATH=$ORACLE_HOME/lib:/lib:/usr/lib
 export CLASSPATH=$ORACLE_HOME/JRE:$ORACLE_HOME/jlib:$ORACLE_HOME/rdbms/jlib
