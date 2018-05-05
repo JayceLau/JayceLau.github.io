@@ -16,6 +16,7 @@ more:
 about:
   title:
   link:
+show_toc_bool: true
 
 disqus_shortname: JR4ever
 
