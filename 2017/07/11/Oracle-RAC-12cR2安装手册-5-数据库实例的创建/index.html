@@ -9,39 +9,37 @@
   
   <title>Oracle RAC 12cR2安装手册(5)--数据库实例的创建</title>
   <meta name="author" content="Jayce">
-   <meta name="description" content="在node01上执行1dbca
+  <meta name="description" content="在node01上执行1dbca
 
 创建一个数据库→下一步👆🏻高级配置→下一步👆🏻选择自定义数据库→下一步👆🏻选择所有节点→下一步👆🏻设置全局数据库名和SID前缀，选择创建空白容器数据库→下一步👆🏻
 
 注：  此处的SID前缀需要与环境变量里的ORACLE_SID对应：    例如">
   
-
+  
   <meta property="og:title" content="Oracle RAC 12cR2安装手册(5)--数据库实例的创建"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:site_name" content="JR4ever"/>
- <meta property="og:image" content="undefined"/>
-  
   <link href="/apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
   <link rel="alternate" href="/atom.xml" title="JR4ever" type="application/atom+xml">
   <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="/css/m.min.css">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
 
 <body>
   <a id="top"></a>
-  <div id='wx_pic' style='display:none;'><img src='/wx_share.png'/></div>
   <div id="main">
     <div class="behind">
-      <div class="back">
-        <a href="/" class="black-color"><i class="fa fa-times" aria-hidden="true"></i></a>
-      </div>
+      <a href="/" class="back black-color">
+        <svg class="i-close" viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+            <path d="M2 30 L30 2 M30 30 L2 2"></path>
+        </svg>
+      </a>
       <div class="description">
         &nbsp;JR4ever
       </div>
     </div>
-    <div class="container">
+    <div class="main-ctnr">
       
 
   <article class="standard post">
@@ -58,7 +56,10 @@
     <div class="meta center">
       
 <time datetime="2017-07-11T15:49:34.000Z">
-  <i class="fa fa-calendar"></i>&nbsp;
+<svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
+  </svg>
+  &nbsp;
   2017-07-11
 </time>
 
@@ -66,7 +67,11 @@
 
     
     &nbsp;
-    <i class="fa fa-tag"></i>&nbsp;
+    <svg class="i-tag" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      <circle cx="24" cy="8" r="2"></circle>
+      <path d="M2 18 L18 2 30 2 30 14 14 30 Z"></path>
+    </svg>
+    &nbsp;
     <a href="/categories/Oracle/">Oracle</a>·<a href="/categories/Oracle/RAC/">RAC</a>
 
 
@@ -74,12 +79,19 @@
 
     
     &nbsp;
-    <i class="fa fa-tag"></i>&nbsp;
+    <svg class="i-tag" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      <circle cx="24" cy="8" r="2"></circle>
+      <path d="M2 18 L18 2 30 2 30 14 14 30 Z"></path>
+    </svg>
+    &nbsp;
     <a href="/tags/Tech/">Tech</a>·<a href="/tags/Installation/">Installation</a>
 
 
     </div>
     <hr>
+    
+      
+    
     <div class="picture-container">
       
     </div>
@@ -104,23 +116,8 @@
   </div>
 
 
-<div id="disqus_thread"></div>
-<script>
+    
 
-var disqus_config = function () {
-this.page.url = 'https://JayceLau.github.io/2017/07/11/Oracle-RAC-12cR2安装手册-5-数据库实例的创建/index.html';
-this.page.identifier = undefined;
-};
-
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-
-s.src = '//JR4ever.disqus.com/embed.js';
-
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
 
 
 
@@ -128,10 +125,12 @@ s.setAttribute('data-timestamp', +new Date());
   </div>
   <footer class="page-footer"><div class="clearfix">
 </div>
-<div class="right-foot container">
+<div class="right-foot">
     <div class="firstrow">
         <a href="#top" target="_self">
-        <i class="fa fa-arrow-right"></i>
+        <svg class="i-caret-right" viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+            <path d="M10 30 L26 16 10 2 Z"></path>
+        </svg>
         </a>
         © JR 2010-4ever
     </div>
@@ -145,7 +144,7 @@ s.setAttribute('data-timestamp', +new Date());
 </div>
 </footer>
   <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
-<script src="/js/search.js"></script>
+<script src="/js/search.min.js"></script>
 <script type="text/javascript">
 
 // disqus scripts
