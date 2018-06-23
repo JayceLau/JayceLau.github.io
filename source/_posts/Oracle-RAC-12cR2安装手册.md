@@ -13,7 +13,7 @@ date: 2017-06-07 23:01:00
 - Linux Distribution: Oracle Linux Server release 6.9
 - Database: Oracle Database 12c Release 2
 
-安装步骤如下：
+### 安装步骤：
 - [虚拟机的准备](../../23/Oracle-RAC-12cR2安装手册-1-虚拟机的准备/)
 - [环境的准备](../../29/Oracle-RAC-12cR2安装手册-2-环境的准备/)
 - [网格基础设施的安装](../../../07/05/Oracle-RAC-12cR2安装手册-3-网格基础设施的安装/)
