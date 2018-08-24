@@ -85,7 +85,7 @@ PD创建了一个隔离的带有DHCP服">
     </div>
     <hr>
     
-      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#共享网络"><span class="toc-text">共享网络</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#桥接网络"><span class="toc-text">桥接网络</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#共享网络"><span class="toc-text">共享网络</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#桥接网络"><span class="toc-text">桥接网络</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Host-Only网络"><span class="toc-text">Host-Only网络</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参考文档"><span class="toc-text">参考文档</span></a></li></ol>
     
     <div class="picture-container">
       
@@ -115,7 +115,18 @@ PD创建了一个隔离的带有DHCP服">
 </ul>
 <p><img src="https://kb.parallels.com/Attachments/kcs-4833/Bridged%20Network.png" alt="桥接网络拓扑图"></p>
 <p><em>注：选择此模式时，PD不再管理网络的连接。</em></p>
-<p>To Be Continued…</p>
+<p>桥接网络可以在特定的网口上启用，如以太网、Wi-Fi等。</p>
+<ul>
+<li><strong>Bridged: Ethernet</strong>：对应Mac的以太网适配器</li>
+<li><strong>Bridged: Wi-Fi</strong>：对应Mac的Wi-Fi适配器</li>
+<li><strong>Bridged: Default Adapter</strong>：对应Mac的默认的适配器</li>
+</ul>
+<p><img src="https://kb.parallels.com/Attachments/kcs-4833/networks.png" alt="PD网络适配器"></p>
+<h4 id="Host-Only网络"><a href="#Host-Only网络" class="headerlink" title="Host-Only网络"></a>Host-Only网络</h4><p>这个模式与共享网络类似，除了它的子网（如10.37.129.x）与外界隔离之外。工作在host-only模式的虚拟机仅能ping通和看到其他虚拟机以及与网关（10.37.129.1）通信。</p>
+<p><img src="https://kb.parallels.com/Attachments/kcs-4833/Host-only%20network.png" alt="Host-Only网络拓扑图"></p>
+<h4 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h4><ol>
+<li>译自<a href="https://kb.parallels.com/en/4948" target="_blank" rel="noopener">Network modes in Parallels Desktop for Mac</a></li>
+</ol>
 
 
   </article>
