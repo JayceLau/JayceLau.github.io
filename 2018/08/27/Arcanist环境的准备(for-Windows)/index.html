@@ -124,7 +124,7 @@ Arcanist
 <h5 id="PHP的安装"><a href="#PHP的安装" class="headerlink" title="PHP的安装"></a>PHP的安装</h5><ol>
 <li>安装</li>
 </ol>
-<p>至<a href="https://windows.php.net/download" target="_blank" rel="noopener">PHP官网</a>选择最新稳定版下载，解压到C:\Program Files\目录或其他目录下，添加以下环境变量：</p>
+<p>至<a href="https://windows.php.net/download" target="_blank" rel="noopener">PHP官网</a>选择最新稳定版下载（本文选择的版本为PHP-7.2.9-VC15-x64-Thread-Safe ），解压到C:\Program Files\目录或其他目录下，添加以下环境变量：</p>
 <table class="table table-striped">
 <thead>
 <tr>
@@ -194,11 +194,11 @@ Arcanist
 <p>如果输出以下内容，则检查上一步中PHP是否配置正确。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">PHP CONFIGURATION ERRORS</span><br><span class="line"></span><br><span class="line">Your install of PHP does not have the <span class="string">'php_curl.dll'</span> extension enabled. Edit your php.ini file and uncomment the line <span class="built_in">which</span> reads <span class="string">'extension=php_curl.dll'</span>.</span><br></pre></td></tr></table></figure>
 <h4 id="配置编辑器"><a href="#配置编辑器" class="headerlink" title="配置编辑器"></a>配置编辑器</h4><p>在提交代码审查的过程中，需要输入或编辑大块的文本。默认的编辑器为vim，不是特别友好。Arcanist支持配置图形化的文本编辑器，如Notepad++、Sublime Text等，可以根据喜好，自行选择。</p>
-<p>配置编辑器为Notepad++</p>
+<p>将编辑器配置为Notepad++</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arc <span class="built_in">set</span>-config editor <span class="string">"\"C:\Program Files (x86)\Notepad++\notepad++.exe\" -multiInst -nosession"</span></span><br></pre></td></tr></table></figure>
-<p>配置编辑器为Sublime Text</p>
+<p>将编辑器配置为Sublime Text</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arc <span class="built_in">set</span>-config editor <span class="string">"\"C:\Program Files\Sublime Text 3\sublime_text.exe\" -w -n"</span></span><br></pre></td></tr></table></figure>
-<p>不同的编辑器参数略有不同，请注意。</p>
+<p><em>请注意，不同的编辑器参数略有不同。</em></p>
 
 
   </article>
