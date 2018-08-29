@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="google-site-verification" content="" />
+  
+  <title>Phabricator Code Review操作手册</title>
+  <meta name="author" content="Jayce">
+  <meta name="description" content="概述Phabricator支持两条不同的代码审查工作流，一条叫做“reivew”（审查），是在推送前进行的；另一条叫做“audit“（审计），是在推送后进行的。本文主要介绍review。
+Phabricator的代码审查功能目前没有图形化的客户端，只能通过命令行进行操作，使用的工具为Arcanist">
+  
+  
+  <meta property="og:title" content="Phabricator Code Review操作手册"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="JR4ever"/>
+  <link href="/apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
+  <link rel="alternate" href="/atom.xml" title="JR4ever" type="application/atom+xml">
+  <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/m.min.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+
+<body>
+  <a id="top"></a>
+  <div id="main">
+    <div class="behind">
+      <a href="/" class="back black-color">
+        <svg class="i-close" viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+            <path d="M2 30 L30 2 M30 30 L2 2"></path>
+        </svg>
+      </a>
+      <div class="description">
+        &nbsp;JR4ever
+      </div>
+    </div>
+    <div class="main-ctnr">
+      
+
+  <article class="standard post">
+    <div class="title">
+      
+  
+    <h1 class="page-title center">
+        Phabricator Code Review操作手册
+    </h1>
+  
+
+
+    </div>
+    <div class="meta center">
+      
+<time datetime="2018-08-27T05:48:19.000Z">
+<svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
+  </svg>
+  &nbsp;
+  2018-08-27
+</time>
+
+
+
+    
+    &nbsp;
+    <svg class="i-tag" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      <circle cx="24" cy="8" r="2"></circle>
+      <path d="M2 18 L18 2 30 2 30 14 14 30 Z"></path>
+    </svg>
+    &nbsp;
+    <a href="/categories/Phabricator/">Phabricator</a>
+
+
+
+
+    
+    &nbsp;
+    <svg class="i-tag" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      <circle cx="24" cy="8" r="2"></circle>
+      <path d="M2 18 L18 2 30 2 30 14 14 30 Z"></path>
+    </svg>
+    &nbsp;
+    <a href="/tags/CodeReview/">CodeReview</a>
+
+
+    </div>
+    <hr>
+    
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#环境的准备"><span class="toc-text">环境的准备</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#环境的配置"><span class="toc-text">环境的配置</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#配置工程"><span class="toc-text">配置工程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#安装Arcanist证书"><span class="toc-text">安装Arcanist证书</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#提交代码审查"><span class="toc-text">提交代码审查</span></a></li></ol>
+    
+    <div class="picture-container">
+      
+    </div>
+    <h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><p>Phabricator支持两条不同的代码审查工作流，一条叫做“reivew”（审查），是在推送前进行的；另一条叫做“audit“（审计），是在推送后进行的。本文主要介绍review。</p>
+<p>Phabricator的代码审查功能目前没有图形化的客户端，只能通过命令行进行操作，使用的工具为Arcanist。</p>
+<h4 id="环境的准备"><a href="#环境的准备" class="headerlink" title="环境的准备"></a>环境的准备</h4><p><em>注：本步骤为<strong>被审查者</strong>需要进行的操作，其他人跳过。</em></p>
+<ul>
+<li>Windows用户请参考<a href="../Arcanist环境的准备(for-Windows)/">Arcanist环境的准备(for Windows)</a></li>
+<li>macOS用户请参考<a href="../../28/Arcanist环境的准备(for-macOS)/">Arcanist环境的准备(for macOS)</a></li>
+</ul>
+<h4 id="环境的配置"><a href="#环境的配置" class="headerlink" title="环境的配置"></a>环境的配置</h4><h5 id="配置工程"><a href="#配置工程" class="headerlink" title="配置工程"></a>配置工程</h5><p><em>注：本步骤为<strong>仓库管理员</strong>要进行的操作，其他人只需要拉取最新代码即可。</em></p>
+<p>在工程根目录下创建<code>.arcconfig</code>文件，并写入以下内容（注意修改phabricator.uri的值为对应地址）：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"phabricator.uri"</span> : <span class="string">"https://phabricator.example.com/"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后将其提交并推送至远程仓库。</p>
+<h5 id="安装Arcanist证书"><a href="#安装Arcanist证书" class="headerlink" title="安装Arcanist证书"></a>安装Arcanist证书</h5><p><em>注：本步骤为<strong>被审查者</strong>需要进行的操作，其他人跳过。</em></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> PROJECT_PATH/ <span class="comment">#切换到你的项目目录下，注意替换PROJECT_PATH</span></span><br><span class="line">arc install-certificate <span class="comment">#安装Arcanist证书</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/JayceLau/PicBed/master/pictures/20180829111504.png" alt=""></p>
+<p>使用浏览器访问提示的地址获取API Token（可能需要登录）</p>
+<p><img src="https://raw.githubusercontent.com/JayceLau/PicBed/master/pictures/20180829110002.png" alt=""></p>
+<p>复制API Token，粘贴至<code>Paste API Token from that page:</code>处</p>
+<p><img src="https://raw.githubusercontent.com/JayceLau/PicBed/master/pictures/20180829111648.png" alt=""></p>
+<p>证书安装完成。</p>
+<h4 id="提交代码审查"><a href="#提交代码审查" class="headerlink" title="提交代码审查"></a>提交代码审查</h4><p>Comming soon…</p>
+
+
+  </article>
+  </script>
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
+  <div class="busuanzi center">
+    PV:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
+    VV:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
+    UV:&nbsp;<span id="busuanzi_value_site_uv"></span>
+  </div>
+
+
+    
+
+
+
+
+    </div>
+  </div>
+  <footer class="page-footer"><div class="clearfix">
+</div>
+<div class="right-foot">
+    <div class="firstrow">
+        <a href="#top" target="_self">
+        <svg class="i-caret-right" viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+            <path d="M10 30 L26 16 10 2 Z"></path>
+        </svg>
+        </a>
+        © JR 2010-4ever
+    </div>
+    <div class="secondrow">
+        <a href="">
+        
+        </a>
+    </div>
+</div>
+<div class="clearfix">
+</div>
+</footer>
+  <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/search.min.js"></script>
+<script type="text/javascript">
+
+// disqus scripts
+
+
+// dropdown scripts
+$(".dropdown").click(function(event) {
+  var current = $(this);
+  event.stopPropagation();
+  $(current).children(".dropdown-content")[($(current).children(".dropdown-content").hasClass("open"))?'removeClass':'addClass']("open")
+});
+$(document).click(function(){
+    $(".dropdown-content").removeClass("open");
+})
+
+var path = "/search.xml";
+searchFunc(path, 'local-search-input', 'local-search-result');
+
+</script>
+
+</body>
+</html>
