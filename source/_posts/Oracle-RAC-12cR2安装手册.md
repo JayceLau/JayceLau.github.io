@@ -1,11 +1,11 @@
 title: Oracle-RAC-12cR2安装手册
-categories:
-  - Oracle
-  - RAC
-tags:
-  - Tech
-  - Installation
+
+categories: Oracle
+
+tags: [Oracle, RAC, Installation]
+
 date: 2017-06-07 23:01:00
+
 ---
 本文介绍了使用VirtualBox安装Oracle RAC 12cR2的过程。
 ### 版本声明

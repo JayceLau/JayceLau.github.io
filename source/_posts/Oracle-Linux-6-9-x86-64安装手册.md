@@ -1,12 +1,13 @@
 title: Oracle Linux 6.9_x86_64安装手册
-categories:
-  - Linux
-  - System
-tags:
-  - Tech
-  - Installation
+
+categories: OS
+
+tags: [Linux, Installation]
+
 author: Jayce
+
 date: 2017-06-23 14:49:00
+
 ---
 本文介绍了Oracle Linux 6.9的安装过程。
 

@@ -1,12 +1,13 @@
 title: Oracle RAC 12cR2安装手册(4)--数据库软件的安装
+
 date: 2017-07-07 10:17:05
+
 author: Jayce
-tags:
-  - Tech
-  - Installation
-categories:
-  - Oracle
-  - RAC
+
+categories: Oracle
+
+tags: [RAC, Installation]
+
 ---
 在node01上执行
 使用oracle用户登录node01

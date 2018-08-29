@@ -1,12 +1,13 @@
 title: Linux下修改hostname
-tags:
-  - Tech
-  - Configuration
-categories:
-  - Linux
-  - System
+
+tags: [Linux, Configuration]
+
+categories: Network
+
 author: Jayce
+
 date: 2017-06-28 10:49:00
+
 ---
 {% asset_img linux-hostname-configuration-0.png linux-hostname-configuration %}
 查看当前hostname👆🏻

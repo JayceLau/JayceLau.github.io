@@ -1,12 +1,12 @@
 title: Oracle RAC 12cR2安装手册(1)--虚拟机的准备
-categories:
-  - Oracle
-  - RAC
-tags:
-  - Tech
-  - Installation
+
+categories: Oracle
+
+tags: [RAC, Installation]
+
 author: Jayce
 date: 2017-06-23 14:07:00
+
 ---
 <!-- toc -->
 ### 创建第一台虚拟机

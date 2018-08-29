@@ -1,11 +1,7 @@
----
 title: 在OMS服务器上提取Management Agent·
 date: 2017-08-04 14:06:42
-categories:
-  - Oracle
-  - EMCC
-tags:
-  - Tech
+tags: [Oracle, EMCC]
+categories: Oracle
 author: Jayce
 ---
 ### 登录emcli

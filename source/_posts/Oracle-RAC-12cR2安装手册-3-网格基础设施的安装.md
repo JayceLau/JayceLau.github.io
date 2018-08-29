@@ -1,12 +1,13 @@
 title: Oracle RAC 12cR2安装手册(3)--网格基础设施的安装
-tags:
-  - Tech
-  - Installation
-categories:
-  - Oracle
-  - RAC
+
+categories: Oracle
+
+tags: [RAC, Installation]
+
 author: Jayce
+
 date: 2017-07-05 11:08:00
+
 ---
 > 注：
 > 除特殊注明外，本文所有命令均使用root用户执行。

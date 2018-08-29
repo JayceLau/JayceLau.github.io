@@ -1,12 +1,13 @@
 title: Oracle RAC 12cR2安装手册(2)--环境的准备
-categories:
-  - Oracle
-  - RAC
-tags:
-  - Tech
-  - Installation
+
+categories: Oracle
+
+tags: [RAC, Installation]
+
 author: Jayce
+
 date: 2017-06-29 10:23:01
+
 ---
 <!-- toc -->
 > 注：

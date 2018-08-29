@@ -1,14 +1,15 @@
----
 title: Oracle RAC 12cR2安装手册(5)--数据库实例的创建
+
 date: 2017-07-11 23:49:34
+
 author: Jayce
-tags:
-  - Tech
-  - Installation
-categories:
-  - Oracle
-  - RAC
+
+categories: Oracle
+
+tags: [RAC, Installation]
+
 ---
+
 在node01上执行
 ```
 dbca

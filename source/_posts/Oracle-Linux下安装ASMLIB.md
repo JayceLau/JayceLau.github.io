@@ -1,12 +1,13 @@
 title: Oracle Linux下安装ASMLIB
-tags:
-  - Linux
-  - yum
-categories:
-  - Tech
-  - Configuration
+
+tags: [Linux, yum,asm]
+
+categories: Oracle
+
 author: Jayce
+
 date: 2017-07-04 22:22:00
+
 ---
 ### 关于ASMLIB
 Oracle ASMLIB（Oracle Automatic Storage Management library）是一个ASM的支持库，它使Oracle数据库可以更加有效地读写磁盘。

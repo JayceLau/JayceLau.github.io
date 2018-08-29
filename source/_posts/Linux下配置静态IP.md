@@ -1,12 +1,13 @@
 title: Linux下配置静态IP
-categories:
-  - Linux
-  - Network
-tags:
-  - Tech
-  - Configuration
+
+categories: Network
+
+tags: [Linux, Configuration]
+
 author: Jayce
+
 date: 2017-06-27 18:06:00
+
 ---
 使用ifconfig命令查看当前使用的网卡👇🏻
 {% asset_img linux-config-static-ip-0.png linux-static-ip-configuration %}
