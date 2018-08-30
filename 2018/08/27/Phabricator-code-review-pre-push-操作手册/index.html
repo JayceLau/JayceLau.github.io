@@ -9,8 +9,12 @@
   
   <title>Phabricator Code Review操作手册</title>
   <meta name="author" content="Jayce">
-  <meta name="description" content="概述Phabricator支持两条不同的代码审查工作流，一条叫做“reivew”（审查），是在推送前进行的；另一条叫做“audit“（审计），是在推送后进行的。本文主要介绍review。
-Phabricator的代码审查功能目前没有图形化的客户端，只能通过命令行进行操作，使用的工具为Arcanist">
+  <meta name="description" content="更新记录2018-08-30:
+
+更新代码审查申请备注信息的说明及对应截图；
+新增arc diff信息提交后的截图；
+
+概述Phabricator支持两条不同的代码审查工作流，一条叫做“reivew”（审查），是在推送前进行的；另一条叫做“audit“（审计），是在推送后进行的。本文主要介绍revi">
   
   
   <meta property="og:title" content="Phabricator Code Review操作手册"/>
@@ -87,12 +91,17 @@ Phabricator的代码审查功能目前没有图形化的客户端，只能通过
     </div>
     <hr>
     
-      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#环境的准备"><span class="toc-text">环境的准备</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#环境的配置"><span class="toc-text">环境的配置</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#配置工程"><span class="toc-text">配置工程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#安装Arcanist证书"><span class="toc-text">安装Arcanist证书</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#提交代码审查申请"><span class="toc-text">提交代码审查申请</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码审查"><span class="toc-text">代码审查</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#推送代码"><span class="toc-text">推送代码</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#更新记录"><span class="toc-text">更新记录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#环境的准备"><span class="toc-text">环境的准备</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#环境的配置"><span class="toc-text">环境的配置</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#配置工程"><span class="toc-text">配置工程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#安装Arcanist证书"><span class="toc-text">安装Arcanist证书</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#提交代码审查申请"><span class="toc-text">提交代码审查申请</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码审查"><span class="toc-text">代码审查</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#推送代码"><span class="toc-text">推送代码</span></a></li></ol>
     
     <div class="picture-container">
       
     </div>
-    <h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><p>Phabricator支持两条不同的代码审查工作流，一条叫做“reivew”（审查），是在推送前进行的；另一条叫做“audit“（审计），是在推送后进行的。本文主要介绍review。</p>
+    <h4 id="更新记录"><a href="#更新记录" class="headerlink" title="更新记录"></a>更新记录</h4><p>2018-08-30:</p>
+<ul>
+<li>更新代码审查申请备注信息的说明及对应截图；</li>
+<li>新增arc diff信息提交后的截图；</li>
+</ul>
+<h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><p>Phabricator支持两条不同的代码审查工作流，一条叫做“reivew”（审查），是在推送前进行的；另一条叫做“audit“（审计），是在推送后进行的。本文主要介绍review。</p>
 <p>Phabricator的代码审查功能目前没有图形化的客户端，只能通过命令行进行操作，使用的工具为Arcanist。</p>
 <h4 id="环境的准备"><a href="#环境的准备" class="headerlink" title="环境的准备"></a>环境的准备</h4><p><em>注：本步骤为<strong>被审查者</strong>需要进行的操作，其他人可以跳过。</em></p>
 <ul>
@@ -118,27 +127,28 @@ Phabricator的代码审查功能目前没有图形化的客户端，只能通过
 <p>完成代码提交、分支合并后，使用命令行工具，切换到工程目录下执行：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> PROJECT_PATH/ <span class="comment">#注意替换成真实的工程目录</span></span><br><span class="line">arc diff</span><br></pre></td></tr></table></figure>
 <p>此时会自动打开之前定义的文本编辑器</p>
-<p><img src="https://raw.githubusercontent.com/JayceLau/PicBed/master/pictures/20180829162641.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/JayceLau/PicBed/master/pictures/20180830215226.png" alt=""></p>
 <p><em>注：</em></p>
-<p><em>1.首行为代码审查申请的备注信息，请根据实际情况填写；</em></p>
-<p><em>2.如果涉及多次提交，可以做一下总结，填入Summary项；</em></p>
-<p><em>3.Reviewers为必填项，此处务必准确无误地填入<strong>审查者</strong>的Phabricator的用户名。</em></p>
+<p><em>1.首行为代码审查申请的标题，请简明扼要的写明本次申请所涉及的内容;</em></p>
+<p><em>2.Summary项可以详细介绍本次申请所涉及的内容，使用”<strong>Tn</strong>“会自动引用对应的任务；</em></p>
+<p><img src="https://raw.githubusercontent.com/JayceLau/PicBed/master/pictures/20180830220147.png" alt=""></p>
+<p><em>3.Reviewers为必填项，此处务必准确无误地填入<strong>审查者</strong>的Phabricator的用户名；此处的admin仅做演示，实际使用时，请修改为自己的审查人。</em></p>
 <p>填写完成后，保存，并关闭文本编辑器（Arcanist会等待文本编辑器程序的退出，因而此处必须完全退出程序）。</p>
-<p><img src="https://raw.githubusercontent.com/JayceLau/PicBed/master/pictures/20180829163514.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/JayceLau/PicBed/master/pictures/20180830220241.png" alt=""></p>
 <p>此时已完成代码审查的提交的，Phabricator会自动发送邮件通知<strong>审查者</strong>进行代码审查，也可以手动复制Revision URI发送给审查者。</p>
-<p><em>注意：此处需记下代码审查的ID，此处为“D25”，后面会用到。</em></p>
+<p><em>注意：此处需记下代码审查的ID，此处为“D32”，后面会用到。</em></p>
 <h4 id="代码审查"><a href="#代码审查" class="headerlink" title="代码审查"></a>代码审查</h4><p><em>注：本步骤为<strong>审查者</strong>需要进行的操作，其他人可以跳过。</em></p>
 <p><strong>审查者</strong>收到代码审查申请后，直接访问对应的链接打开代码审查界面。</p>
-<p><img src="https://raw.githubusercontent.com/JayceLau/PicBed/master/pictures/20180829191234.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/JayceLau/PicBed/master/pictures/20180830220430.png" alt=""></p>
 <p>在这里可以看到修订的文件列表、文件改动的具体内容等，审查者完成代码审查后，可以选择“Accept Revision”（接受该修订版）、“Request Changes”（请求变更）、“Change Reviewers”（改变审查者）等。此外，还可以添加备注信息，用于记录信息或者提醒被审查者做代码修改。</p>
 <p>这里选择接收该修订版，被审查者将收到审查通过的通知邮件。</p>
 <h4 id="推送代码"><a href="#推送代码" class="headerlink" title="推送代码"></a>推送代码</h4><p><em>注：本步骤为<strong>被审查者</strong>需要进行的操作，其他人可以跳过。</em></p>
 <ol>
 <li>审查通过</li>
 </ol>
-<p><strong>被审查者</strong>收到审查通过的通知邮件后，切换到工程目录下执行：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> PROJECT_PATH/ <span class="comment">#注意替换成真实的工程目录</span></span><br><span class="line">arc land --revision D25 <span class="comment">#提交代码审查申请时自动分配的ID</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/JayceLau/PicBed/master/pictures/20180829201745.png" alt=""></p>
+<p><strong>被审查者</strong>收到审查通过的通知邮件后，使用命令行工具执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> PROJECT_PATH/ <span class="comment">#切换到工程目录下，注意替换成真实的工程目录</span></span><br><span class="line">arc land --revision D32 <span class="comment">#提交代码审查申请时自动分配的ID</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/JayceLau/PicBed/master/pictures/20180830222840.png" alt=""></p>
 <p>代码推送成功。</p>
 <ol start="2">
 <li>审查未通过</li>
