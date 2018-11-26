@@ -43,7 +43,7 @@ categories: Phabricator
 
 {% endtable %}
 
-并将%PHP_HOME%/bin添加到Path变量中，参考如下：
+并将%PHP_HOME%添加到Path变量中，参考如下：
 
 ![](https://raw.githubusercontent.com/JayceLau/PicBed/master/pictures/20180828154244.png)
 
@@ -112,7 +112,7 @@ git clone https://github.com/phacility/arcanist.git #克隆Arcanist
 
 3. 检查确认
 
-重启Git Bash使环境变量生效，执行`arc version`观察到如下输出即证明Arcanist安装成功。
+重启Git Bash使环境变量生效，执行`arc version`观察到如下输出即证明Arcanist安装成功。
 
 ![](https://raw.githubusercontent.com/JayceLau/PicBed/master/pictures/20180829151626.png)
 
@@ -144,6 +144,6 @@ arc set-config editor "\"C:\Program Files\Sublime Text 3\sublime_text.exe\" -w -
 
 
 
-	
+​	
 
-	
+​	
