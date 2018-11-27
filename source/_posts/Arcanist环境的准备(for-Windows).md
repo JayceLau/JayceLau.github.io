@@ -90,6 +90,8 @@ git clone https://github.com/phacility/arcanist.git #克隆Arcanist
 
 *2.安装目录可以根据需要，自行选择。*
 
+*3.如果提示权限不足，请以管理员身份运行Git Bash。*
+
 克隆需要花费一定时间，观察到如下输出即完成克隆。
 
 ![](https://raw.githubusercontent.com/JayceLau/PicBed/master/pictures/20180828141916.png)
